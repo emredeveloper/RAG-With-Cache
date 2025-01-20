@@ -1,13 +1,11 @@
-# language_model.py
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import os
 
-CACHE_DIR = "model_cache"
 
 class LanguageModel:
     def __init__(self, model_name):
         self.model_name = model_name
-        self.cache_path = os.path.join(CACHE_DIR, model_name.replace("/", "_"))
+        self.cache_path = os.path.join("model_cache", model_name.replace("/", "_"))
         self.tokenizer, self.model = self._load_model()
 
     def _load_model(self):

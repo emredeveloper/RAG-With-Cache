@@ -1,4 +1,3 @@
-# rag_system.py
 from .embedding_model import EmbeddingModel
 from .retriever import Retriever
 from .language_model import LanguageModel

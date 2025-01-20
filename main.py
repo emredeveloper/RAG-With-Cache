@@ -1,11 +1,10 @@
-# main.py
 from config import Config
 from model.embedding_model import EmbeddingModel
 from model.retriever import Retriever
 from model.language_model import LanguageModel
 from model.rag_system import RAGSystem
 import pandas as pd
-import inquirer  # İnteraktif seçim kutusu için
+import inquirer
 
 
 def select_option(options, prompt):

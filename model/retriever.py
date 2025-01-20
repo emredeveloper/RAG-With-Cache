@@ -1,7 +1,7 @@
-# retriever.py
 import faiss
 import numpy as np
-from .embedding_model import EmbeddingModel  # Göreceli içe aktarma
+from .embedding_model import EmbeddingModel
+
 
 class Retriever:
     def __init__(self, embedding_model):
