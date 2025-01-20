@@ -37,4 +37,3 @@ class LanguageModel:
             num_return_sequences=1
         )
         return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
-

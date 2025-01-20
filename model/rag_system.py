@@ -26,4 +26,3 @@ Documents:
 
 Answer:"""
         return prompt
-

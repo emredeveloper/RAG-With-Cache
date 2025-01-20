@@ -11,4 +11,3 @@ def clear_cache():
         print("Cache klasörü temizlendi.")
     else:
         print("Cache klasörü zaten boş.")
-
