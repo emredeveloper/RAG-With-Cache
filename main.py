@@ -1,11 +1,12 @@
 # main.py
 from config import Config
-from embedding_model import EmbeddingModel
-from retriever import Retriever
-from language_model import LanguageModel
-from rag_system import RAGSystem
+from model.embedding_model import EmbeddingModel
+from model.retriever import Retriever
+from model.language_model import LanguageModel
+from model.rag_system import RAGSystem
 import pandas as pd
 import inquirer  # İnteraktif seçim kutusu için
+
 
 def select_option(options, prompt):
     """
@@ -16,6 +17,7 @@ def select_option(options, prompt):
     ]
     answers = inquirer.prompt(questions)
     return answers['choice']
+
 
 def main():
     # Yapılandırma ayarlarını yükle
@@ -58,6 +60,7 @@ def main():
     query = "What is the capital of France?"
     answer = rag_system.answer_question(query, top_k=config.TOP_K)
     print("RAG Answer:", answer)
+
 
 if __name__ == "__main__":
     main()

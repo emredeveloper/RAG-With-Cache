@@ -1,4 +1,7 @@
+import os
 import shutil
+
+CACHE_DIR = "model_cache"
 
 def clear_cache():
     """

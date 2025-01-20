@@ -1,7 +1,8 @@
 # rag_system.py
-from .embedding_model import EmbeddingModel  # Göreceli içe aktarma
+from .embedding_model import EmbeddingModel
 from .retriever import Retriever
 from .language_model import LanguageModel
+
 
 class RAGSystem:
     def __init__(self, embedding_model, retriever, language_model):
