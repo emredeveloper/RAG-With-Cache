@@ -27,3 +27,4 @@ def test_retriever_retrieve():
     retriever.build_index(documents)
     similar_docs = retriever.retrieve("test", top_k=1)
     assert len(similar_docs) == 1
+

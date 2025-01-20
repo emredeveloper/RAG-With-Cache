@@ -1,5 +1,4 @@
 import faiss
-import numpy as np
 from .embedding_model import EmbeddingModel
 
 
@@ -21,3 +20,4 @@ class Retriever:
         distances, indices = self.index.search(query_embedding, top_k)
         similar_docs = [(self.documents[i], distances[0][j]) for j, i in enumerate(indices[0])]
         return similar_docs
+

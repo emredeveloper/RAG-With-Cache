@@ -26,3 +26,4 @@ class EmbeddingModel:
         Metinleri vektörlere dönüştürür.
         """
         return self.model.encode(texts)
+
