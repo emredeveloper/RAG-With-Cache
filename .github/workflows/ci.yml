@@ -13,19 +13,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Repository'yi checkout et
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2. Python'u kur
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.9"
 
+      # 3. Gereksinimleri yükle
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # 4. Kod kalitesi kontrolleri (flake8)
+      - name: Lint with flake8
+        run: |
+          pip install flake8
+          flake8 .
+
+      # 5. Testleri çalıştır (eğer test dosyalarınız varsa)
       - name: Run tests
         run: |
-          python -m pytest  # Eğer test dosyalarınız varsa
+          python -m pytest
