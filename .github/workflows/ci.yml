@@ -35,7 +35,7 @@ jobs:
           pip install flake8
           flake8 .
 
-      # 5. Testleri çalıştır (eğer test dosyalarınız varsa)
+      # 5. Testleri çalıştır
       - name: Run tests
         run: |
-          python -m pytest
+          python -m pytest tests/
