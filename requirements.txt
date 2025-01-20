@@ -1,0 +1,10 @@
+datasets
+faiss-cpu
+sentence-transformers
+transformers
+torch
+numpy
+pandas
+rouge-score
+mauve-text
+tqdm
