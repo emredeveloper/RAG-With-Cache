@@ -8,7 +8,7 @@ git clone https://github.com/kullanici_adiniz/RAG-Best-Practices.git
 cd RAG-Best-Practices
 pip install -r requirements.txt
 
-Using :
+Usage:
 
 python main.py
 
