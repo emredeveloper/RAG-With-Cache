@@ -7,3 +7,11 @@ A study and implementation of best practices for Retrieval-Augmented Generation 
 git clone https://github.com/kullanici_adiniz/RAG-Best-Practices.git
 cd RAG-Best-Practices
 pip install -r requirements.txt
+
+
+## Installation
+
+You can install the package directly from GitHub using `pip`:
+
+```bash
+pip install git+https://github.com/kullanici_adiniz/RAG_Deepseek.git
