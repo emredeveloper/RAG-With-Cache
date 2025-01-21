@@ -21,7 +21,6 @@ pip install -r requirements.txt
 Usage:
 
 python main.py
->>>>>>> 4ffcc5e754303b5ea7381cd9fc770b7991c0b398
 
 ## Installation
 
