@@ -11,4 +11,5 @@ tqdm
 pytest
 langchain
 langchain-community
-PyPDF2
+pypdf
+langchain-huggingface
