@@ -3,27 +3,20 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from model.retriever import Retriever
+from model.langchain_retriever import LangChainRetriever
 from model.embedding_model import EmbeddingModel
 
-
-def test_retriever_initialization():
+def test_faiss_retriever():
     embedding_model = EmbeddingModel("sentence-transformers/all-MiniLM-L6-v2")
     retriever = Retriever(embedding_model)
-    assert retriever is not None
-
-
-def test_retriever_build_index():
-    embedding_model = EmbeddingModel("sentence-transformers/all-MiniLM-L6-v2")
-    retriever = Retriever(embedding_model)
-    documents = ["This is a test document.", "Another test document."]
+    documents = ["Test document 1", "Test document 2"]
     retriever.build_index(documents)
-    assert retriever.index is not None
+    results = retriever.retrieve("test", top_k=1)
+    assert len(results) == 1
 
-
-def test_retriever_retrieve():
+def test_langchain_retriever():
     embedding_model = EmbeddingModel("sentence-transformers/all-MiniLM-L6-v2")
-    retriever = Retriever(embedding_model)
-    documents = ["This is a test document.", "Another test document."]
-    retriever.build_index(documents)
-    similar_docs = retriever.retrieve("test", top_k=1)
-    assert len(similar_docs) == 1
+    documents = ["Test document 1", "Test document 2"]
+    retriever = LangChainRetriever(embedding_model, documents)
+    results = retriever.get_relevant_documents("test")
+    assert len(results) <= 2

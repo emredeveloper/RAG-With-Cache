@@ -9,3 +9,6 @@ rouge-score
 mauve-text
 tqdm
 pytest
+langchain
+langchain-community
+PyPDF2

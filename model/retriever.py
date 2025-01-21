@@ -1,6 +1,6 @@
 import faiss
+import numpy as np
 from .embedding_model import EmbeddingModel
-
 
 class Retriever:
     def __init__(self, embedding_model):
@@ -13,10 +13,11 @@ class Retriever:
         embeddings = self.embedding_model.encode(documents)
         dimension = embeddings.shape[1]
         self.index = faiss.IndexFlatL2(dimension)
-        self.index.add(embeddings)
+        self.index.add(embeddings.astype(np.float32))
     
     def retrieve(self, query, top_k=2):
-        query_embedding = self.embedding_model.encode([query]).reshape(1, -1)
+        query_embedding = self.embedding_model.encode([query])
+        query_embedding = query_embedding.astype(np.float32)
         distances, indices = self.index.search(query_embedding, top_k)
-        similar_docs = [(self.documents[i], distances[0][j]) for j, i in enumerate(indices[0])]
-        return similar_docs
+        return [(self.documents[i], float(distances[0][j])) 
+                for j, i in enumerate(indices[0])]
