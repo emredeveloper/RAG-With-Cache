@@ -8,6 +8,7 @@ git clone https://github.com/kullanici_adiniz/RAG-Best-Practices.git
 cd RAG-Best-Practices
 pip install -r requirements.txt
 
+<<<<<<< HEAD
 ## Özellikler
 - **Retriever Seçenekleri:** 
   - FAISS: Yüksek performanslı vektör arama
@@ -16,6 +17,11 @@ pip install -r requirements.txt
   ```bash
   pip install -r requirements.txt
 
+=======
+Usage:
+
+python main.py
+>>>>>>> 4ffcc5e754303b5ea7381cd9fc770b7991c0b398
 
 ## Installation
 
