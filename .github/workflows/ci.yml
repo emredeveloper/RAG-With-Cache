@@ -8,6 +8,11 @@ on:
     branches:
       - main
 
+# İş akışı için gerekli izinler
+permissions:
+  contents: read  # Repository içeriğini okumak için
+  pull-requests: read  # Pull request'leri okumak için
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -30,6 +35,6 @@ jobs:
           pip install -r requirements.txt
       
       # 4. Testleri çalıştır
-      #- name: Run tests
-       # run: |
-          #python -m pytest tests/
+     # - name: Run tests
+      #  run: |
+       #   python -m pytest tests/

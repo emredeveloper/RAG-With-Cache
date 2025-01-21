@@ -5,9 +5,15 @@ on:
     tags:
       - 'v*'  # v1.0.0 gibi etiketlerde tetiklenir
 
+# İş akışı için gerekli izinler
+permissions:
+  contents: write  # Paketleri GitHub Packages'e yüklemek için
+  packages: write  # GitHub Packages'e erişim için
+
 jobs:
   publish:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
@@ -26,7 +32,7 @@ jobs:
           python setup.py sdist bdist_wheel
 
       - name: Publish to GitHub Packages
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@b3b8a8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8f8  # Sabit bir SHA hash kullanın
         with:
           user: __token__
           password: ${{ secrets.GITHUB_TOKEN }}
