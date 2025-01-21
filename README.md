@@ -18,13 +18,3 @@ A comprehensive study and implementation of best practices for **Retrieval-Augme
 - **Evaluation Metrics**: Comprehensive evaluation tools to measure retrieval accuracy and generation quality.
 
 - **Customizable Configuration**: Easily adjust chunk sizes, overlap, and retrieval parameters to suit your needs.
-
----
-
-## 🛠️ Installation
-
-### Option 1: Clone the Repository
-```bash
-git clone https://github.com/kullanici_adiniz/RAG-Best-Practices.git
-cd RAG-Best-Practices
-pip install -r requirements.txt
