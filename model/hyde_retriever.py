@@ -84,3 +84,4 @@ class HyDERetriever:
         ]
         
         return similar_docs, hypothetical_doc
+    
