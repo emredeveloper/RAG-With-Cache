@@ -8,9 +8,17 @@ pandas
 rouge-score
 mauve-text
 tqdm
+pymupdf
 pytest
 langchain
 langchain-community
 pypdf
 langchain-huggingface
 chonkie
+python-dotenv
+requests
+beautifulsoup4
+ddgs
+chromadb
+pdfplumber
+rich
