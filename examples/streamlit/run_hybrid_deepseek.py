@@ -3,4 +3,4 @@
 Run with:
     streamlit run examples/streamlit/run_hybrid_deepseek.py
 """
-from model import hybrid_rag_pdf_ollama_deepseek  # noqa: F401
+from model import hybrid_rag_pdf_ollama  # noqa: F401

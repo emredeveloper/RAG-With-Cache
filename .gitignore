@@ -121,3 +121,25 @@ Thumbs.db
 
 # PDF files
 *.pdf
+
+# Ignore extracted images and common image formats that shouldn't be tracked
+extracted_images/
+**/extracted_images/
+*.png
+*.PNG
+
+# Chroma DB and vector DB artifacts
+chroma_db/
+model/chroma_db/
+**/chroma_db/
+chroma.sqlite3
+
+# Binary data files
+*.bin
+
+# Exported assets (html export assets)
+assets/
+**/assets/
+
+# Local data dumps
+data/**/extracted_images/
