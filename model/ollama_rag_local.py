@@ -109,12 +109,12 @@ with st.sidebar:
     with st.expander("🤖 Model Settings", expanded=True):
         model_name = st.selectbox(
             "LLM Model",
-            ["qwen2.5:7b", "deepscaler:latest", "smollm2:latest"],
+            ["granite4:tiny-h", "qwen2.5:7b", "deepscaler:latest", "smollm2:latest"],
             help="Soru-cevap için dil modeli.",
         )
         embedding_model = st.selectbox(
             "Embedding Model",
-            ["nomic-embed-text:latest", "mxbai-embed-large"],
+            ["embeddinggemma:latest", "nomic-embed-text:latest", "mxbai-embed-large"],
             help="Metin gömme modeli.",
         )
         temperature = st.slider("Temperature", 0.0, 1.0, 0.4, 0.1,

@@ -31,13 +31,13 @@ session_id = st.session_state.id
 @st.cache_resource
 def load_llm():
     """Load the Ollama LLM model with caching."""
-    return Ollama(model="qwen2.5:7b", request_timeout=120.0)
+    return Ollama(model="granite4:tiny-h", request_timeout=120.0)
 
 @st.cache_resource
 def load_embedding_model():
     """Load the Ollama embedding model (nomic-embed-text) with caching."""
     embed_model = OllamaEmbedding(
-        model_name="nomic-embed-text",
+        model_name="embeddinggemma:latest",
         base_url="http://localhost:11434"  # Default Ollama URL, adjust if necessary
     )
     return embed_model

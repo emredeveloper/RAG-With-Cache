@@ -16,10 +16,10 @@ Answer:
 
 pdfs_directory = ''
 
-embeddings = OllamaEmbeddings(model="deepseek-r1:1.5b")
+embeddings = OllamaEmbeddings(model="embeddinggemma:latest")
 vector_store = InMemoryVectorStore(embeddings)
 
-model = OllamaLLM(model="deepseek-r1:1.5b")
+model = OllamaLLM(model="granite4:tiny-h")
 
 def upload_pdf(file):
     with open(pdfs_directory + file.name, "wb") as f:
