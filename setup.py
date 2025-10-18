@@ -1,20 +1,17 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
-    name="rag_deepseek",
-    version="1.0.0",  # Release sürümüyle eşleşmeli
-    packages=find_packages(),
+    name="rag_with_cache",
+    version="1.1.0",
+    packages=find_packages(include=["rag", "rag.*"]),
     install_requires=[
-        "datasets",
         "faiss-cpu",
         "sentence-transformers",
         "transformers",
         "torch",
         "numpy",
-        "pandas",
-        "rouge-score",
-        "mauve-text",
-        "tqdm",
+        "pypdf",
         "pytest",
+        "inquirer",
     ],
 )

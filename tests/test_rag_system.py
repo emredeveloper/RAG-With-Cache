@@ -1,24 +1,36 @@
-from model.rag_system import RAGSystem
-from model.embedding_model import EmbeddingModel
-from model.retriever import Retriever
-from model.language_model import LanguageModel
+import numpy as np
+
+from rag.system import RAGSystem
+
+
+class StubEmbeddingModel:
+    def encode(self, texts):
+        return np.ones((len(list(texts)), 4), dtype=np.float32)
+
+
+class StubLanguageModel:
+    def generate(self, prompt: str, max_new_tokens: int = 50) -> str:
+        return "stub answer"
+
+
+class StubRetriever:
+    def retrieve(self, query, top_k):
+        return [("Document text", 0.9)], "stub doc"
+
 
 def test_rag_system_initialization():
-    # RAG sisteminin başlatılmasını test et
-    embedding_model = EmbeddingModel("sentence-transformers/all-MiniLM-L6-v2")
-    retriever = Retriever(embedding_model)
-    language_model = LanguageModel("gpt2")
+    embedding_model = StubEmbeddingModel()
+    retriever = StubRetriever()
+    language_model = StubLanguageModel()
     rag_system = RAGSystem(embedding_model, retriever, language_model)
-    assert rag_system is not None, "RAGSystem başlatılamadı!"
+    assert rag_system is not None
+
 
 def test_rag_system_answer_question():
-    # RAG sisteminin soru cevaplamasını test et
-    embedding_model = EmbeddingModel("sentence-transformers/all-MiniLM-L6-v2")
-    retriever = Retriever(embedding_model)
-    documents = ["Paris is the capital of France.", "London is the capital of the UK."]
-    retriever.build_index(documents)
-    language_model = LanguageModel("gpt2")
+    embedding_model = StubEmbeddingModel()
+    retriever = StubRetriever()
+    language_model = StubLanguageModel()
     rag_system = RAGSystem(embedding_model, retriever, language_model)
     answer = rag_system.answer_question("What is the capital of France?")
-    assert isinstance(answer, str), "Cevap string değil!"
-    assert len(answer) > 0, "Cevap boş!"
+    assert isinstance(answer, str)
+    assert len(answer) > 0
