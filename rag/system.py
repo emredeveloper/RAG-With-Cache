@@ -24,7 +24,11 @@ class RAGSystem:
         self.language_model = language_model
 
     def answer_question(self, query: str, top_k: int = 2) -> str:
-        similar_docs, _ = self.retriever.retrieve(query, top_k)
+        retrieval_result = self.retriever.retrieve(query, top_k)
+        if isinstance(retrieval_result, tuple):
+            similar_docs = retrieval_result[0]
+        else:
+            similar_docs = retrieval_result
         prompt = self._create_prompt(query, similar_docs)
         return self.language_model.generate(prompt)
 
